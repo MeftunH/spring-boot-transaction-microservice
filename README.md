@@ -67,3 +67,9 @@ response
 [
 ]
 ```
+
+### Basic Auth credentials
+``` 
+username: SecureKeyUsername!
+password: SecureKeyPassword! 
+ ```
