@@ -16,6 +16,9 @@ configurations {
 
 repositories {
     mavenCentral()
+    jar {
+        enabled = false
+    }
 }
 
 dependencies {
