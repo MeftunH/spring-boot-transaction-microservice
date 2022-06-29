@@ -21,8 +21,13 @@ public class TransactionController {
 
   @DeleteMapping("/{transactionId}")
   public ResponseEntity<?> deleteTransaction(@PathVariable Long transactionId) {
-     transactionService.deleteTransaction(transactionId);
-     return new ResponseEntity<>(HttpStatus.OK);
+
+      if (transactionService.existsById(transactionId)) {
+          transactionService.deleteTransaction(transactionId);
+          return new ResponseEntity<>(HttpStatus.OK);
+      } else {
+          return ResponseEntity.badRequest().body("Transaction with id " + transactionId + " does not exist");
+      }
   }
 
   @GetMapping("/{userId}")

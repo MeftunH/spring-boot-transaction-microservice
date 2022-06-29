@@ -7,6 +7,8 @@ import java.util.List;
 public abstract class ITransactionService {
     public abstract Transaction saveTransaction(Transaction transaction);
 
+    public abstract boolean existsById(Long id);
+
     public abstract void deleteTransaction(Long id);
 
     public abstract List<Transaction> findAllTransactionsByUserId(Long userId);

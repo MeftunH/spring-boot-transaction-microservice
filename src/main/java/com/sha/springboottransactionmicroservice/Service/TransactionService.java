@@ -18,7 +18,10 @@ public class TransactionService extends ITransactionService {
       transaction.setCreatedAt(LocalDateTime.now());
       return transactionRepository.save(transaction);
   }
-
+    @Override
+    public boolean existsById(Long id) {
+        return transactionRepository.existsById(id);
+    }
   @Override
   public void deleteTransaction(Long id) {
       transactionRepository.deleteById(id);
